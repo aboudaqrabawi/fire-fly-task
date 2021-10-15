@@ -1,0 +1,18 @@
+ion-content {
+  --ion-background-color: #36377a;
+}
+
+.ListHeader {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.header {
+  height: 100px;
+}
+
+.menu {
+  padding-top: 4rem;
+}

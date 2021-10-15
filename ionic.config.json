@@ -1,8 +1,7 @@
 {
-  "name": "FireFly Task",
+  "name": "fire-fly-task",
   "integrations": {
     "capacitor": {}
   },
-  "type": "react",
-  "id": "20af3c0a"
+  "type": "react"
 }
