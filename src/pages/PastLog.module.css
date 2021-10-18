@@ -1,18 +1,22 @@
-ion-content {
-  --ion-background-color: #36377a;
-}
+
 
 .ListHeader {
   display: flex;
   justify-content: center;
   text-align: center;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  font-size: 3rem;
+  color: azure;
+ 
 }
 
-.header {
-  height: 100px;
-}
-
-.menu {
-  padding-top: 4rem;
+.list{
+  color:azure ;
+  font-size: 1.5rem;
+  
+  text-align:left;
+  align-items: flex-start;
+  
+  
 }

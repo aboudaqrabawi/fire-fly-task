@@ -8,27 +8,28 @@ import {
   IonButtons,
   IonTextarea,
   IonItem,
+  IonBackButton,
+  IonTitle,
+  IonLabel,
 } from "@ionic/react";
 import { useEffect, useState } from "react";
-import { trim, handleZero } from "../utils/Helpers";
-import ButtonRow from "../components/ButtonRow";
-import styles from "./Home.module.css";
-import { NavButtons } from "../Navigation/navbuttons";
-import { buttons } from "../utils/Buttons";
-
-import Button from "../components/Button";
 import { addPastLogs } from "../store/PastLogStore";
+import { trim, handleZero } from "../utils/Helpers";
+import styles from "./Home.module.css"
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
-  const [Equa, setEqua] = useState("");
+  
 
+  const [Equa, setEqua] = useState("");
   const handleClick = async (e, operator) => {
     if (operator === "C") {
       setEqua("0");
     } else if (operator === "=") {
       addPastLogs(`${trim(Equa)} = ${eval(Equa)}`);
 
-      setEqua(eval(Equa));
+      setEqua(eval(Equa).toString());
     } else if (Equa[0] === "0") {
       setEqua(operator);
     } else {
@@ -39,42 +40,36 @@ const Home = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar className={styles.header} color="yellow">
-          <IonButtons slot="start" className={styles.menu}>
-            <NavButtons />
-          </IonButtons>
-        </IonToolbar>
+        <Header />
       </IonHeader>
+
       <IonContent fullscreen>
-        <IonItem className={styles.sumContainer} lines="none" color="yellow">
-          <IonTextarea className={styles.sumcon}>
-            {Equa.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-          </IonTextarea>
-        </IonItem>
+        <IonTextarea disabled>
+          {Equa.length < 5 ? (
+            <IonLabel className={styles.sumContainerhead}>
+              {Equa.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            </IonLabel>
+          ) : Equa.length < 15 ? (
+            <IonLabel className={styles.sumContainerhead2}>
+              {Equa.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            </IonLabel>
+          ) : Equa.length < 18 ? (
+            <IonLabel className={styles.sumContainerhead3}>
+              {Equa.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            </IonLabel>
+          ) : (
+            <IonLabel className={styles.sumContainerhead4}>
+              {Equa.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            </IonLabel>
+          )}
+        </IonTextarea>
       </IonContent>
 
-      <IonFooter>
-        <IonGrid className={styles.calculatorContainer}>
-          {buttons.map((buttonRow, index) => {
-            return (
-              <ButtonRow key={index}>
-                {buttonRow.map((button) => {
-                  return (
-                    <Button
-                      key={button.value}
-                      value={button.value}
-                      special={button.special}
-                      clickEvent={handleClick}
-                    />
-                  );
-                })}
-              </ButtonRow>
-            );
-          })}
-        </IonGrid>
-      </IonFooter>
+      <Footer data={handleClick} />
     </IonPage>
   );
 };
 
 export default Home;
+
+

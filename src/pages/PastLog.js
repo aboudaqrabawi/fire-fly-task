@@ -8,6 +8,7 @@ import { NavButtons } from '../Navigation/navbuttons';
 import { useStoreState } from 'pullstate';
 import { PastLogStore } from '../store';
 import { getPastLogs } from '../store/Selectors';
+import Header from '../components/Header/Header';
 
 
 const Home = () => {
@@ -17,22 +18,17 @@ const Home = () => {
 
 	return (
 		<IonPage >
-			<IonHeader >
-		<IonToolbar className={styles.header}  color="yellow">
-		 <IonButtons slot="start" className={styles.menu}>
-		<NavButtons />
-		 </IonButtons>
-	 </IonToolbar>
-	</IonHeader>
+		<Header/>
   <IonContent fullscreen>
   <IonListHeader  className={styles.ListHeader} >
-      <IonLabel>Log History</IonLabel>
+      <IonLabel >Log History</IonLabel>
     </IonListHeader>
 
 
   <IonList >
 			{saved.map(item =>{
-				return   <IonItem lines="full" >
+				return   <IonItem 
+				className={styles.list}  >
 					{item}
 					 </IonItem>
 

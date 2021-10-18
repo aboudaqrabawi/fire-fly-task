@@ -23,29 +23,3 @@
   border-radius: 300px;
 }  
 
-@media only screen and (min-width: 800px) {
-  .button {
-    background-color: transparent;
-   
-    color: white;
-   
-   
-    
-    font-size: 28px;
-    
-    border-radius: 10px;
-  }
-  
-  .specialButton {
-    background-color: rgb(243, 211, 99);
-    margin: 0.2rem;
-    
-    
-    color: white;
-    text-align: center;
-  
-    font-size: 28px;
-  
-    border-radius: 100px;
-  }  
-}

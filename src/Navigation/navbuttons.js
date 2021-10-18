@@ -20,7 +20,7 @@ return (
         ) :(
 
             <>
-                <IonButton routerLink ={"/"} > Home </IonButton>
+                <IonButton routerLink ={"/Home"} > Home </IonButton>
                 <IonButton routerLink ={"/LogHistory"} > Home </IonButton>
 
 

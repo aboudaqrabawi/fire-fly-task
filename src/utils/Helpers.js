@@ -52,3 +52,19 @@ export const handleZero = (string) => {
   }
   return newString
 };
+
+
+
+// export const handleClick = async (e, operator) => {
+//   if (operator === "C") {
+//     setEqua("0");
+//   } else if (operator === "=") {
+//     addPastLogs(`${trim(Equa)} = ${eval(Equa)}`);
+
+//     setEqua(eval(Equa));
+//   } else if (Equa[0] === "0") {
+//     setEqua(operator);
+//   } else {
+//     setEqua(Equa + operator);
+//   }
+// };

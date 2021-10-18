@@ -1,0 +1,10 @@
+.button {
+    background-color: transparent;
+    border: 10px solid transparent;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 1rem;
+    
+  }

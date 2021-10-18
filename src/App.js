@@ -28,10 +28,10 @@ const App = () => (
 		<IonReactRouter>
 			<Menu/>
 			<IonRouterOutlet id="main">
-				<Route path="/"  component={Home}>
+				<Route exact path="/"  component={Home} >
 					
 				</Route>
-				<Route  path="/LogHistory" component={PastLog}>
+				<Route  exact path="/LogHistory" component={PastLog}>
 					
 				</Route>
 			</IonRouterOutlet>

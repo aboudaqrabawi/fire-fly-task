@@ -77,6 +77,9 @@ http://ionicframework.com/docs/theming/ */
 }
 
 :root {
+  /* Set the background of the entire app */
+  --ion-background-color: #36377a;
 
-  --blue-color: rgb(99, 158, 226);
+  /* Set the font family of the entire app */
+  
 }

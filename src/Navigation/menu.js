@@ -18,12 +18,12 @@ const Menu = () => {
 <IonContent>
     <IonList>
         <IonMenuToggle autoHide="false">
-            <IonItem button routerLink ={"/"} routerDirection="none">
+            <IonItem button routerLink ={"/"} >
                 <IonLabel>
                     Home
                 </IonLabel>
             </IonItem>
-            <IonItem button routerLink ={"/LogHistory"} routerDirection="none">
+            <IonItem button routerLink ={"/LogHistory"}>
                 <IonLabel>
                     Log History 
                 </IonLabel>
